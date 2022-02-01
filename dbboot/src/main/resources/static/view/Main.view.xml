@@ -1,0 +1,68 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="testing.controller.Main"
+ xmlns:t="sap.ui.table" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<Page title="Welcome to Main Page">
+		<Button text="Load Data" press="onLoadData"></Button>
+			<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+ 				<Label text="CompanyName"/>
+				<Input value="{/postPayload/companyName}"/> 
+				<Label text="ContactName" />
+				<Input value="{/postPayload/contactName}"/>	
+				<Label text="lastName" />
+				<Input value="{/postPayload/lastName}" /> 
+				<Label text="firstName" />
+				<Input value="{/postPayload/firstName}"/>	
+				<Label text="website" />
+				<Input value="{/postPayload/website}" /> 
+				<Label text="Email" />
+				<Input value="{/postPayload/email}"/>	
+				<Label text="status" />
+				<Input value="{/postPayload/status}"/>	
+				<Label text="regDate" />
+				<Input value="{/postPayload/regDate}"/>	
+			</f:content>
+		</f:SimpleForm>
+		<t:Table id="idTable">
+			<t:columns>
+				<t:Column>
+					<Label text="Name">
+					</Label>
+					<t:template>
+						<Text text="{firstName} {lastName}"/>
+					</t:template>
+				</t:Column>
+				<t:Column>
+					<Label text="Email">
+					</Label>
+					<t:template>
+						<Text text="{email}"/>
+					</t:template>
+				</t:Column>
+			</t:columns>
+		</t:Table>
+		<footer>
+			<Toolbar>
+				<Button text="SAVE" press="onSave"/>
+				<Button text="EDIT" press="onEdit"/>
+			</Toolbar>
+		</footer>
+	</Page>
+ </mvc:View>
